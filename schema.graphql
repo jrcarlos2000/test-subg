@@ -1,6 +1,13 @@
-type ExampleEntity @entity {
+type vaultEntity @entity {
   id: ID!
   count: BigInt!
   account: Bytes! # address
   token: Bytes! # address
+}
+
+type orderEntity @entity {
+  id: ID!
+  count: BigInt!
+  account: Bytes! # address
+  orderIndex: BigInt! # uint256
 }
