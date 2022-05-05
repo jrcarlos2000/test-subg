@@ -1,13 +1,7 @@
-type vaultEntity @entity {
-  id: ID!
-  count: BigInt!
-  account: Bytes! # address
-  token: Bytes! # address
-}
-
-type orderEntity @entity {
-  id: ID!
-  count: BigInt!
-  account: Bytes! # address
-  orderIndex: BigInt! # uint256
+type ActivePosition @entity {
+  id: ID! # key
+  account: String!
+  collateralToken: String!
+  indexToken: String!
+  isLong: Boolean!
 }
