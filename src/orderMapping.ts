@@ -1,4 +1,4 @@
-import { BigInt } from "@graphprotocol/graph-ts"
+import { BigInt, Address } from "@graphprotocol/graph-ts"
 import {
   OrderBook,
   CancelDecreaseOrder,
@@ -18,84 +18,103 @@ import {
   UpdateMinPurchaseTokenAmountUsd,
   UpdateSwapOrder
 } from "../generated/OrderBook/OrderBook"
-import { orderEntity } from "../generated/schema"
+import { Order } from "../generated/schema"
 
-export function handleCancelDecreaseOrder(event: CancelDecreaseOrder): void {
-  // Entities can be loaded from the store using a string ID; this ID
-  // needs to be unique across all entities of the same type
-  let entity = orderEntity.load(event.transaction.from.toHex())
+const INCREASE_TYPE = "increase";
+const DECREASE_TYPE = "decresse";
 
-  // Entities only exist after they have been saved to the store;
-  // `null` checks allow to create entities on demand
-  if (!entity) {
-    entity = new orderEntity(event.transaction.from.toHex())
-
-    // Entity fields can be set using simple assignments
-    entity.count = BigInt.fromI32(0)
-  }
-
-  // BigInt and BigDecimal math are supported
-  entity.count = entity.count + BigInt.fromI32(1)
-
-  // Entity fields can be set based on event parameters
-  entity.account = event.params.account
-  entity.orderIndex = event.params.orderIndex
-
-  // Entities can be written to the store with `.save()`
-  entity.save()
-
-  // Note: If a handler doesn't require existing field values, it is faster
-  // _not_ to load the entity from the store. Instead, create it fresh with
-  // `new Entity(...)`, set the fields that should be updated and save the
-  // entity back to the store. Fields that were not set or unset remain
-  // unchanged, allowing for partial updates to be applied.
-
-  // It is also possible to access smart contracts from mappings. For
-  // example, the contract that has emitted the event can be connected to
-  // with:
-  //
-  // let contract = Contract.bind(event.address)
-  //
-  // The following functions can then be called on this contract to access
-  // state variables and other data:
-  //
-  // - contract.PRICE_PRECISION(...)
-  // - contract.USDG_PRECISION(...)
-  // - contract.decreaseOrders(...)
-  // - contract.decreaseOrdersIndex(...)
-  // - contract.getDecreaseOrder(...)
-  // - contract.getIncreaseOrder(...)
-  // - contract.getSwapOrder(...)
-  // - contract.getUsdgMinPrice(...)
-  // - contract.gov(...)
-  // - contract.increaseOrders(...)
-  // - contract.increaseOrdersIndex(...)
-  // - contract.isInitialized(...)
-  // - contract.minExecutionFee(...)
-  // - contract.minPurchaseTokenAmountUsd(...)
-  // - contract.router(...)
-  // - contract.swapOrders(...)
-  // - contract.swapOrdersIndex(...)
-  // - contract.usdg(...)
-  // - contract.validatePositionOrderPrice(...)
-  // - contract.validateSwapOrderPriceWithTriggerAboveThreshold(...)
-  // - contract.vault(...)
-  // - contract.weth(...)
+function _getId(account: Address, type: string, orderIndex: BigInt): string {
+  let id = account.toHexString() + "-" + type + "-" + orderIndex.toString();
+  return id;
 }
 
-export function handleCancelIncreaseOrder(event: CancelIncreaseOrder): void {}
+function _handleCreateOrder(
+  type: string, 
+  account: Address, 
+  orderIndex: BigInt,
+  indexToken: string, 
+  sizeDelta: BigInt,
+  isLong: boolean,
+  triggerPrice: BigInt
+  ): void {
+  let id = _getId(account, type, orderIndex);
+  let order = new Order(id);
+
+  order.type = type;
+  order.status = "open";
+
+  order.account = account.toHexString();
+  order.orderIndex = orderIndex;
+  order.indexToken = indexToken; 
+  order.sizeDelta = sizeDelta;
+  order.isLong = isLong;
+  order.triggerPrice = triggerPrice;
+
+  order.save();
+}
+
+function _handleCancelOrder(type: string, account: Address, orderIndex: BigInt): void {
+  let id = _getId(account, type, orderIndex);
+  let order = Order.load(id);
+
+  if (order != null) {
+    order.status = "cancelled";
+    order.save();
+  }
+}
+
+function _handleExecuteOrder(type: string, account: Address, orderIndex: BigInt): void {
+  let id = _getId(account, type, orderIndex);
+  let order = Order.load(id);
+
+  if (order != null) {
+    order.status = "executed";
+    order.save();
+  }
+}
+
+export function handleCreateIncreaseOrder(event: CreateIncreaseOrder): void {
+  _handleCreateOrder(
+    INCREASE_TYPE, 
+    event.params.account, 
+    event.params.orderIndex, 
+    event.params.indexToken.toHexString(),
+    event.params.sizeDelta,
+    event.params.isLong,
+    event.params.triggerPrice
+  );
+}
+
+export function handleCreateDecreaseOrder(event: CreateDecreaseOrder): void {
+  _handleCreateOrder(
+    DECREASE_TYPE, 
+    event.params.account, 
+    event.params.orderIndex, 
+    event.params.indexToken.toHexString(),
+    event.params.sizeDelta,
+    event.params.isLong,
+    event.params.triggerPrice
+  );
+}
+
+export function handleCancelIncreaseOrder(event: CancelIncreaseOrder): void {
+  _handleCancelOrder(INCREASE_TYPE, event.params.account, event.params.orderIndex);
+}
+export function handleCancelDecreaseOrder(event: CancelDecreaseOrder): void {
+  _handleCancelOrder(DECREASE_TYPE, event.params.account, event.params.orderIndex);
+}
+
+
+export function handleExecuteIncreaseOrder(event: ExecuteIncreaseOrder): void {
+  _handleExecuteOrder(INCREASE_TYPE, event.params.account, event.params.orderIndex);
+}
+export function handleExecuteDecreaseOrder(event: ExecuteDecreaseOrder): void {
+  _handleExecuteOrder(DECREASE_TYPE, event.params.account, event.params.orderIndex);
+}
 
 export function handleCancelSwapOrder(event: CancelSwapOrder): void {}
 
-export function handleCreateDecreaseOrder(event: CreateDecreaseOrder): void {}
-
-export function handleCreateIncreaseOrder(event: CreateIncreaseOrder): void {}
-
 export function handleCreateSwapOrder(event: CreateSwapOrder): void {}
-
-export function handleExecuteDecreaseOrder(event: ExecuteDecreaseOrder): void {}
-
-export function handleExecuteIncreaseOrder(event: ExecuteIncreaseOrder): void {}
 
 export function handleExecuteSwapOrder(event: ExecuteSwapOrder): void {}
 

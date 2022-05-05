@@ -1,7 +1,28 @@
 type ActivePosition @entity {
-  id: ID! # key
+  id: ID!  # key
+
   account: String!
   collateralToken: String!
   indexToken: String!
   isLong: Boolean!
+}
+
+enum OrderStatus {
+  open
+  cancelled
+  executed
+}
+
+type Order @entity {
+  id: ID!  # account + type + orderIndex
+
+  type: String!  # increase/decrease
+  status: OrderStatus!
+
+  account: String!
+  orderIndex: BigInt!
+  indexToken: String!
+  sizeDelta: BigInt!
+  isLong: Boolean!
+  triggerPrice: BigInt!
 }
