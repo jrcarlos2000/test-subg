@@ -23,7 +23,9 @@ import {
   UpdatePnl,
   UpdatePosition
 } from "../generated/Vault/Vault"
-import { ActivePosition } from "../generated/schema"
+import { ActivePosition, Transaction } from "../generated/schema"
+import getTokenSymbol from "./tokenList"
+
 
 export function handleBuyUSDG(event: BuyUSDG): void {
   // Entities can be loaded from the store using a string ID; this ID
@@ -72,8 +74,6 @@ export function handleDecreaseGuaranteedUsd(
 
 export function handleDecreasePoolAmount(event: DecreasePoolAmount): void {}
 
-export function handleDecreasePosition(event: DecreasePosition): void {}
-
 export function handleDecreaseReservedAmount(
   event: DecreaseReservedAmount
 ): void {}
@@ -90,13 +90,36 @@ export function handleIncreasePoolAmount(event: IncreasePoolAmount): void {}
 
 export function handleIncreasePosition(event: IncreasePosition): void {
   // 创建新的 or 更新 ActivePosition
-  let entity = new ActivePosition(event.params.key.toHexString())
-  entity.account = event.params.account.toHexString();
-  entity.collateralToken = event.params.collateralToken.toHexString();
-  entity.indexToken = event.params.indexToken.toHexString();
-  entity.isLong = event.params.isLong;
-  entity.save()
+  let positionEntity = new ActivePosition(event.params.key.toHexString());
+  positionEntity.account = event.params.account.toHexString();
+  positionEntity.collateralToken = event.params.collateralToken.toHexString();
+  positionEntity.indexToken = event.params.indexToken.toHexString();
+  positionEntity.isLong = event.params.isLong;
+  positionEntity.save();
+
+  // 创建新的 Transaction
+  let txEntity = new Transaction(event.params.key.toHexString());
+  txEntity.account = event.params.account.toHexString();
+  txEntity.indexToken = event.params.indexToken.toHexString();
+  txEntity.indexTokenSymbol = getTokenSymbol(event.params.indexToken.toHexString());
+  txEntity.sizeDelta = event.params.sizeDelta;
+  txEntity.isLong = event.params.isLong;
+  txEntity.price = event.params.price;
+  txEntity.save();
 }
+
+export function handleDecreasePosition(event: DecreasePosition): void {
+  // 创建新的 Transaction
+  let txEntity = new Transaction(event.params.key.toHexString());
+  txEntity.account = event.params.account.toHexString();
+  txEntity.indexToken = event.params.indexToken.toHexString();
+  txEntity.indexTokenSymbol = getTokenSymbol(event.params.indexToken.toHexString());
+  txEntity.sizeDelta = event.params.sizeDelta;
+  txEntity.isLong = event.params.isLong;
+  txEntity.price = event.params.price;
+  txEntity.save();
+}
+
 
 export function handleIncreaseReservedAmount(
   event: IncreaseReservedAmount
