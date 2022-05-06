@@ -72,7 +72,7 @@ export function handleIncreasePosition(event: IncreasePosition): void {
   let txEntity = new Transaction(event.params.key.toHexString());
   txEntity.account = event.params.account.toHexString();
   txEntity.indexToken = event.params.indexToken.toHexString();
-  txEntity.indexTokenSymbol = getTokenSymbol(event.params.indexToken.toHexString());
+  // txEntity.indexTokenSymbol = getTokenSymbol(event.params.indexToken.toHexString());
   txEntity.sizeDelta = event.params.sizeDelta;
   txEntity.isLong = event.params.isLong;
   txEntity.price = event.params.price;
@@ -84,7 +84,7 @@ export function handleDecreasePosition(event: DecreasePosition): void {
   let txEntity = new Transaction(event.params.key.toHexString());
   txEntity.account = event.params.account.toHexString();
   txEntity.indexToken = event.params.indexToken.toHexString();
-  txEntity.indexTokenSymbol = getTokenSymbol(event.params.indexToken.toHexString());
+  // txEntity.indexTokenSymbol = getTokenSymbol(event.params.indexToken.toHexString());
   txEntity.sizeDelta = event.params.sizeDelta;
   txEntity.isLong = event.params.isLong;
   txEntity.price = event.params.price;

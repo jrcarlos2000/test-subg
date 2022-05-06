@@ -1,16 +1,15 @@
 {
-  "name": "acy-stats",
+  "name": "testsubg",
   "license": "UNLICENSED",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --product hosted-service lay90/acy-stats",
-    "create-local": "graph create --node http://localhost:8020/ lay90/acy-stats",
-    "remove-local": "graph remove --node http://localhost:8020/ lay90/acy-stats",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 lay90/acy-stats"
+    "deploy": "graph deploy --product hosted-service jrcarlos2000/testsubg",
+    "create-local": "graph create --node http://localhost:8020/ jrcarlos2000/test-subg",
+    "remove-local": "graph remove --node http://localhost:8020/ jrcarlos2000/test-subg",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 jrcarlos2000/test-subg"
   },
   "dependencies": {
-    "@graphprotocol/graph-cli": "0.29.1",
     "@graphprotocol/graph-ts": "0.26.0"
   }
 }

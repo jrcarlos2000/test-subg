@@ -1,5 +1,9 @@
 [
-  { "inputs": [], "stateMutability": "nonpayable", "type": "constructor" },
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
   {
     "anonymous": false,
     "inputs": [
@@ -883,20 +887,36 @@
   {
     "inputs": [],
     "name": "PRICE_PRECISION",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "USDG_PRECISION",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_orderIndex", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_orderIndex",
+        "type": "uint256"
+      }
     ],
     "name": "cancelDecreaseOrder",
     "outputs": [],
@@ -905,7 +925,11 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_orderIndex", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_orderIndex",
+        "type": "uint256"
+      }
     ],
     "name": "cancelIncreaseOrder",
     "outputs": [],
@@ -937,7 +961,11 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_orderIndex", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_orderIndex",
+        "type": "uint256"
+      }
     ],
     "name": "cancelSwapOrder",
     "outputs": [],
@@ -946,8 +974,16 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "_indexToken", "type": "address" },
-      { "internalType": "uint256", "name": "_sizeDelta", "type": "uint256" },
+      {
+        "internalType": "address",
+        "name": "_indexToken",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_sizeDelta",
+        "type": "uint256"
+      },
       {
         "internalType": "address",
         "name": "_collateralToken",
@@ -958,8 +994,16 @@
         "name": "_collateralDelta",
         "type": "uint256"
       },
-      { "internalType": "bool", "name": "_isLong", "type": "bool" },
-      { "internalType": "uint256", "name": "_triggerPrice", "type": "uint256" },
+      {
+        "internalType": "bool",
+        "name": "_isLong",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_triggerPrice",
+        "type": "uint256"
+      },
       {
         "internalType": "bool",
         "name": "_triggerAboveThreshold",
@@ -973,25 +1017,61 @@
   },
   {
     "inputs": [
-      { "internalType": "address[]", "name": "_path", "type": "address[]" },
-      { "internalType": "uint256", "name": "_amountIn", "type": "uint256" },
-      { "internalType": "address", "name": "_indexToken", "type": "address" },
-      { "internalType": "uint256", "name": "_minOut", "type": "uint256" },
-      { "internalType": "uint256", "name": "_sizeDelta", "type": "uint256" },
+      {
+        "internalType": "address[]",
+        "name": "_path",
+        "type": "address[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_amountIn",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_indexToken",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_minOut",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_sizeDelta",
+        "type": "uint256"
+      },
       {
         "internalType": "address",
         "name": "_collateralToken",
         "type": "address"
       },
-      { "internalType": "bool", "name": "_isLong", "type": "bool" },
-      { "internalType": "uint256", "name": "_triggerPrice", "type": "uint256" },
+      {
+        "internalType": "bool",
+        "name": "_isLong",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_triggerPrice",
+        "type": "uint256"
+      },
       {
         "internalType": "bool",
         "name": "_triggerAboveThreshold",
         "type": "bool"
       },
-      { "internalType": "uint256", "name": "_executionFee", "type": "uint256" },
-      { "internalType": "bool", "name": "_shouldWrap", "type": "bool" }
+      {
+        "internalType": "uint256",
+        "name": "_executionFee",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "_shouldWrap",
+        "type": "bool"
+      }
     ],
     "name": "createIncreaseOrder",
     "outputs": [],
@@ -1000,18 +1080,46 @@
   },
   {
     "inputs": [
-      { "internalType": "address[]", "name": "_path", "type": "address[]" },
-      { "internalType": "uint256", "name": "_amountIn", "type": "uint256" },
-      { "internalType": "uint256", "name": "_minOut", "type": "uint256" },
-      { "internalType": "uint256", "name": "_triggerRatio", "type": "uint256" },
+      {
+        "internalType": "address[]",
+        "name": "_path",
+        "type": "address[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_amountIn",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_minOut",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_triggerRatio",
+        "type": "uint256"
+      },
       {
         "internalType": "bool",
         "name": "_triggerAboveThreshold",
         "type": "bool"
       },
-      { "internalType": "uint256", "name": "_executionFee", "type": "uint256" },
-      { "internalType": "bool", "name": "_shouldWrap", "type": "bool" },
-      { "internalType": "bool", "name": "_shouldUnwrap", "type": "bool" }
+      {
+        "internalType": "uint256",
+        "name": "_executionFee",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "_shouldWrap",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "_shouldUnwrap",
+        "type": "bool"
+      }
     ],
     "name": "createSwapOrder",
     "outputs": [],
@@ -1020,12 +1128,24 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "", "type": "address" },
-      { "internalType": "uint256", "name": "", "type": "uint256" }
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
     ],
     "name": "decreaseOrders",
     "outputs": [
-      { "internalType": "address", "name": "account", "type": "address" },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
       {
         "internalType": "address",
         "name": "collateralToken",
@@ -1036,31 +1156,71 @@
         "name": "collateralDelta",
         "type": "uint256"
       },
-      { "internalType": "address", "name": "indexToken", "type": "address" },
-      { "internalType": "uint256", "name": "sizeDelta", "type": "uint256" },
-      { "internalType": "bool", "name": "isLong", "type": "bool" },
-      { "internalType": "uint256", "name": "triggerPrice", "type": "uint256" },
+      {
+        "internalType": "address",
+        "name": "indexToken",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "sizeDelta",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "isLong",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "triggerPrice",
+        "type": "uint256"
+      },
       {
         "internalType": "bool",
         "name": "triggerAboveThreshold",
         "type": "bool"
       },
-      { "internalType": "uint256", "name": "executionFee", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "executionFee",
+        "type": "uint256"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "name": "decreaseOrdersIndex",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "_address", "type": "address" },
-      { "internalType": "uint256", "name": "_orderIndex", "type": "uint256" },
+      {
+        "internalType": "address",
+        "name": "_address",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_orderIndex",
+        "type": "uint256"
+      },
       {
         "internalType": "address payable",
         "name": "_feeReceiver",
@@ -1074,8 +1234,16 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "_address", "type": "address" },
-      { "internalType": "uint256", "name": "_orderIndex", "type": "uint256" },
+      {
+        "internalType": "address",
+        "name": "_address",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_orderIndex",
+        "type": "uint256"
+      },
       {
         "internalType": "address payable",
         "name": "_feeReceiver",
@@ -1089,8 +1257,16 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "_account", "type": "address" },
-      { "internalType": "uint256", "name": "_orderIndex", "type": "uint256" },
+      {
+        "internalType": "address",
+        "name": "_account",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_orderIndex",
+        "type": "uint256"
+      },
       {
         "internalType": "address payable",
         "name": "_feeReceiver",
@@ -1104,8 +1280,16 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "_account", "type": "address" },
-      { "internalType": "uint256", "name": "_orderIndex", "type": "uint256" }
+      {
+        "internalType": "address",
+        "name": "_account",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_orderIndex",
+        "type": "uint256"
+      }
     ],
     "name": "getDecreaseOrder",
     "outputs": [
@@ -1119,28 +1303,60 @@
         "name": "collateralDelta",
         "type": "uint256"
       },
-      { "internalType": "address", "name": "indexToken", "type": "address" },
-      { "internalType": "uint256", "name": "sizeDelta", "type": "uint256" },
-      { "internalType": "bool", "name": "isLong", "type": "bool" },
-      { "internalType": "uint256", "name": "triggerPrice", "type": "uint256" },
+      {
+        "internalType": "address",
+        "name": "indexToken",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "sizeDelta",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "isLong",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "triggerPrice",
+        "type": "uint256"
+      },
       {
         "internalType": "bool",
         "name": "triggerAboveThreshold",
         "type": "bool"
       },
-      { "internalType": "uint256", "name": "executionFee", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "executionFee",
+        "type": "uint256"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "_account", "type": "address" },
-      { "internalType": "uint256", "name": "_orderIndex", "type": "uint256" }
+      {
+        "internalType": "address",
+        "name": "_account",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_orderIndex",
+        "type": "uint256"
+      }
     ],
     "name": "getIncreaseOrder",
     "outputs": [
-      { "internalType": "address", "name": "purchaseToken", "type": "address" },
+      {
+        "internalType": "address",
+        "name": "purchaseToken",
+        "type": "address"
+      },
       {
         "internalType": "uint256",
         "name": "purchaseTokenAmount",
@@ -1151,69 +1367,161 @@
         "name": "collateralToken",
         "type": "address"
       },
-      { "internalType": "address", "name": "indexToken", "type": "address" },
-      { "internalType": "uint256", "name": "sizeDelta", "type": "uint256" },
-      { "internalType": "bool", "name": "isLong", "type": "bool" },
-      { "internalType": "uint256", "name": "triggerPrice", "type": "uint256" },
+      {
+        "internalType": "address",
+        "name": "indexToken",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "sizeDelta",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "isLong",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "triggerPrice",
+        "type": "uint256"
+      },
       {
         "internalType": "bool",
         "name": "triggerAboveThreshold",
         "type": "bool"
       },
-      { "internalType": "uint256", "name": "executionFee", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "executionFee",
+        "type": "uint256"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "_account", "type": "address" },
-      { "internalType": "uint256", "name": "_orderIndex", "type": "uint256" }
+      {
+        "internalType": "address",
+        "name": "_account",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_orderIndex",
+        "type": "uint256"
+      }
     ],
     "name": "getSwapOrder",
     "outputs": [
-      { "internalType": "address", "name": "path0", "type": "address" },
-      { "internalType": "address", "name": "path1", "type": "address" },
-      { "internalType": "address", "name": "path2", "type": "address" },
-      { "internalType": "uint256", "name": "amountIn", "type": "uint256" },
-      { "internalType": "uint256", "name": "minOut", "type": "uint256" },
-      { "internalType": "uint256", "name": "triggerRatio", "type": "uint256" },
+      {
+        "internalType": "address",
+        "name": "path0",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "path1",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "path2",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amountIn",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "minOut",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "triggerRatio",
+        "type": "uint256"
+      },
       {
         "internalType": "bool",
         "name": "triggerAboveThreshold",
         "type": "bool"
       },
-      { "internalType": "bool", "name": "shouldUnwrap", "type": "bool" },
-      { "internalType": "uint256", "name": "executionFee", "type": "uint256" }
+      {
+        "internalType": "bool",
+        "name": "shouldUnwrap",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "executionFee",
+        "type": "uint256"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "_otherToken", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "_otherToken",
+        "type": "address"
+      }
     ],
     "name": "getUsdgMinPrice",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "gov",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "", "type": "address" },
-      { "internalType": "uint256", "name": "", "type": "uint256" }
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
     ],
     "name": "increaseOrders",
     "outputs": [
-      { "internalType": "address", "name": "account", "type": "address" },
-      { "internalType": "address", "name": "purchaseToken", "type": "address" },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "purchaseToken",
+        "type": "address"
+      },
       {
         "internalType": "uint256",
         "name": "purchaseTokenAmount",
@@ -1224,33 +1532,81 @@
         "name": "collateralToken",
         "type": "address"
       },
-      { "internalType": "address", "name": "indexToken", "type": "address" },
-      { "internalType": "uint256", "name": "sizeDelta", "type": "uint256" },
-      { "internalType": "bool", "name": "isLong", "type": "bool" },
-      { "internalType": "uint256", "name": "triggerPrice", "type": "uint256" },
+      {
+        "internalType": "address",
+        "name": "indexToken",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "sizeDelta",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "isLong",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "triggerPrice",
+        "type": "uint256"
+      },
       {
         "internalType": "bool",
         "name": "triggerAboveThreshold",
         "type": "bool"
       },
-      { "internalType": "uint256", "name": "executionFee", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "executionFee",
+        "type": "uint256"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "name": "increaseOrdersIndex",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "_router", "type": "address" },
-      { "internalType": "address", "name": "_vault", "type": "address" },
-      { "internalType": "address", "name": "_weth", "type": "address" },
-      { "internalType": "address", "name": "_usdg", "type": "address" },
+      {
+        "internalType": "address",
+        "name": "_router",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_vault",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_weth",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_usdg",
+        "type": "address"
+      },
       {
         "internalType": "uint256",
         "name": "_minExecutionFee",
@@ -1270,34 +1626,62 @@
   {
     "inputs": [],
     "name": "isInitialized",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "minExecutionFee",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "minPurchaseTokenAmountUsd",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "router",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "_gov", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "_gov",
+        "type": "address"
+      }
     ],
     "name": "setGov",
     "outputs": [],
@@ -1332,43 +1716,99 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "", "type": "address" },
-      { "internalType": "uint256", "name": "", "type": "uint256" }
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
     ],
     "name": "swapOrders",
     "outputs": [
-      { "internalType": "address", "name": "account", "type": "address" },
-      { "internalType": "uint256", "name": "amountIn", "type": "uint256" },
-      { "internalType": "uint256", "name": "minOut", "type": "uint256" },
-      { "internalType": "uint256", "name": "triggerRatio", "type": "uint256" },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amountIn",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "minOut",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "triggerRatio",
+        "type": "uint256"
+      },
       {
         "internalType": "bool",
         "name": "triggerAboveThreshold",
         "type": "bool"
       },
-      { "internalType": "bool", "name": "shouldUnwrap", "type": "bool" },
-      { "internalType": "uint256", "name": "executionFee", "type": "uint256" }
+      {
+        "internalType": "bool",
+        "name": "shouldUnwrap",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "executionFee",
+        "type": "uint256"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "name": "swapOrdersIndex",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_orderIndex", "type": "uint256" },
+      {
+        "internalType": "uint256",
+        "name": "_orderIndex",
+        "type": "uint256"
+      },
       {
         "internalType": "uint256",
         "name": "_collateralDelta",
         "type": "uint256"
       },
-      { "internalType": "uint256", "name": "_sizeDelta", "type": "uint256" },
-      { "internalType": "uint256", "name": "_triggerPrice", "type": "uint256" },
+      {
+        "internalType": "uint256",
+        "name": "_sizeDelta",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_triggerPrice",
+        "type": "uint256"
+      },
       {
         "internalType": "bool",
         "name": "_triggerAboveThreshold",
@@ -1382,9 +1822,21 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_orderIndex", "type": "uint256" },
-      { "internalType": "uint256", "name": "_sizeDelta", "type": "uint256" },
-      { "internalType": "uint256", "name": "_triggerPrice", "type": "uint256" },
+      {
+        "internalType": "uint256",
+        "name": "_orderIndex",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_sizeDelta",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_triggerPrice",
+        "type": "uint256"
+      },
       {
         "internalType": "bool",
         "name": "_triggerAboveThreshold",
@@ -1398,9 +1850,21 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_orderIndex", "type": "uint256" },
-      { "internalType": "uint256", "name": "_minOut", "type": "uint256" },
-      { "internalType": "uint256", "name": "_triggerRatio", "type": "uint256" },
+      {
+        "internalType": "uint256",
+        "name": "_orderIndex",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_minOut",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_triggerRatio",
+        "type": "uint256"
+      },
       {
         "internalType": "bool",
         "name": "_triggerAboveThreshold",
@@ -1415,7 +1879,13 @@
   {
     "inputs": [],
     "name": "usdg",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -1426,42 +1896,95 @@
         "name": "_triggerAboveThreshold",
         "type": "bool"
       },
-      { "internalType": "uint256", "name": "_triggerPrice", "type": "uint256" },
-      { "internalType": "address", "name": "_indexToken", "type": "address" },
-      { "internalType": "bool", "name": "_maximizePrice", "type": "bool" },
-      { "internalType": "bool", "name": "_raise", "type": "bool" }
+      {
+        "internalType": "uint256",
+        "name": "_triggerPrice",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_indexToken",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "_maximizePrice",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "_raise",
+        "type": "bool"
+      }
     ],
     "name": "validatePositionOrderPrice",
     "outputs": [
-      { "internalType": "uint256", "name": "", "type": "uint256" },
-      { "internalType": "bool", "name": "", "type": "bool" }
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address[]", "name": "_path", "type": "address[]" },
-      { "internalType": "uint256", "name": "_triggerRatio", "type": "uint256" }
+      {
+        "internalType": "address[]",
+        "name": "_path",
+        "type": "address[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_triggerRatio",
+        "type": "uint256"
+      }
     ],
     "name": "validateSwapOrderPriceWithTriggerAboveThreshold",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "vault",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "weth",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
-  { "stateMutability": "payable", "type": "receive" }
+  {
+    "stateMutability": "payable",
+    "type": "receive"
+  }
 ]

@@ -1,12 +1,12 @@
 {
-  "mumbai": {
+  "arbitrum-one": {
     "Vault": {
-      "address": "0x14d92826376F57c065Fe0804314A2BFA860EF08c",
-      "startBlock": 26176714
+      "address": "0x489ee077994B6658eAfA855C308275EAd8097C4A",
+      "startBlock": 225000
     },
     "OrderBook": {
-      "address": "0x64109736f6ccf5f8D5fCF7CBbbc38ec6aB6198FD",
-      "startBlock": 26176749
+      "address": "0x09f77E8A13De9a35a7231028187e9fD5DB8a2ACB",
+      "startBlock": 2329453
     }
   }
 }
