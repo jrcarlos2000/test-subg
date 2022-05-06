@@ -1,4 +1,4 @@
-import { BigInt, store } from "@graphprotocol/graph-ts"
+import { BigInt, store, tendermint } from "@graphprotocol/graph-ts"
 import {
   Vault,
   BuyUSDG,
@@ -23,7 +23,7 @@ import {
   UpdatePnl,
   UpdatePosition
 } from "../generated/Vault/Vault"
-import { ActivePosition, Transaction } from "../generated/schema"
+import { ActivePosition, Transaction, Account } from "../generated/schema"
 import { getTokenSymbol } from "./tokenList"
 
 
@@ -77,6 +77,19 @@ export function handleIncreasePosition(event: IncreasePosition): void {
   txEntity.isLong = event.params.isLong;
   txEntity.price = event.params.price;
   txEntity.save();
+
+  let accountId = event.params.account.toHexString();
+  let accountEntity = Account.load(accountId);
+  if(accountEntity == null){
+    let accountEntity = new Account(accountId);
+    accountEntity.transactions = [txEntity.id];
+    accountEntity.save();
+  }else {
+    let txs = accountEntity.transactions;
+    txs.push(txEntity.id);
+    accountEntity.transactions = txs;
+    accountEntity.save();
+  }
 }
 
 export function handleDecreasePosition(event: DecreasePosition): void {
@@ -89,6 +102,19 @@ export function handleDecreasePosition(event: DecreasePosition): void {
   txEntity.isLong = event.params.isLong;
   txEntity.price = event.params.price;
   txEntity.save();
+
+  let accountId = event.params.account.toHexString();
+  let accountEntity = Account.load(accountId);
+  if(accountEntity == null){
+    let accountEntity = new Account(accountId);
+    accountEntity.transactions = [txEntity.id];
+    accountEntity.save();
+  }else {
+    let txs = accountEntity.transactions;
+    txs.push(txEntity.id);
+    accountEntity.transactions = txs;
+    accountEntity.save();
+  }
 }
 
 
